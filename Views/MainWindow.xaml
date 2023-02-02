@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiAPR_1.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinHeight="400" MinWidth="400">
     <Grid>
-        
+        <Grid.Resources>
+            <Style x:Key="MainProperties">
+                <Setter Property="Control.FontSize" Value="18"></Setter>
+            </Style>
+            <Style x:Key="PanelStyle" BasedOn="{StaticResource ResourceKey=MainProperties}">
+                <Setter Property="FrameworkElement.Margin" Value="5"></Setter>
+                <Setter Property="Grid.Row" Value="0"></Setter>
+                <Setter Property="Rectangle.RadiusX" Value="5"></Setter>
+                <Setter Property="Rectangle.RadiusY" Value="10"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Style="{StaticResource ResourceKey=PanelStyle}" Fill="Lavender" Stroke="Black"></Rectangle>
+        <StackPanel Style="{StaticResource ResourceKey=PanelStyle}" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style x:Key="MarginPanelStyle" BasedOn="{StaticResource ResourceKey=MainProperties}">
+                    <Setter Property="Control.Margin" Value="5, 2"></Setter>
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource ResourceKey=MarginPanelStyle}">
+                    <Setter Property="TextAlignment" Value="Center"></Setter>
+                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Label Style="{StaticResource ResourceKey=MarginPanelStyle}">Количество объектов:</Label>
+            <TextBox MinWidth="100"></TextBox>
+            <Label Style="{StaticResource ResourceKey=MarginPanelStyle}">Количество классов:</Label>
+            <TextBox MinWidth="100"></TextBox>
+            <Button Style="{StaticResource ResourceKey=MarginPanelStyle}">
+                <Button.Content>Генерировать</Button.Content>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Rectangle Style="{StaticResource ResourceKey=PanelStyle}" Fill="Bisque" Margin="-5, 2"></Rectangle>
+                            <ContentPresenter Content="{TemplateBinding Property=Content}"></ContentPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
