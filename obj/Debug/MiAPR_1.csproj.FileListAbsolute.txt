@@ -13,3 +13,4 @@ D:\БГУИР 6 СЕМЕСТР\МиАПР\ЛР\ЛР1\MiAPR_1\obj\Debug\MiAPR_1.c
 D:\БГУИР 6 СЕМЕСТР\МиАПР\ЛР\ЛР1\MiAPR_1\obj\Debug\MiAPR_1.csproj.CoreCompileInputs.cache
 D:\БГУИР 6 СЕМЕСТР\МиАПР\ЛР\ЛР1\MiAPR_1\obj\Debug\MiAPR_1.exe
 D:\БГУИР 6 СЕМЕСТР\МиАПР\ЛР\ЛР1\MiAPR_1\obj\Debug\MiAPR_1.pdb
+D:\БГУИР 6 СЕМЕСТР\МиАПР\ЛР\ЛР1\MiAPR_1\obj\Debug\GeneratedInternalTypeHelper.g.cs

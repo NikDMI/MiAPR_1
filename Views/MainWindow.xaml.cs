@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MiAPR_1.Models;
+using MiAPR_1.ViewModels;
 
 namespace MiAPR_1.Views
 {
@@ -23,6 +25,22 @@ namespace MiAPR_1.Views
         public MainWindow()
         {
             InitializeComponent();
+            _viewModel = new ViewModel();
         }
+
+        private void RenderNewData(object sender, RoutedEventArgs e)
+        {
+            AlgorithmInfo algorithmInfo = (AlgorithmInfo)FindResource("algorithmInfo");
+            try
+            {
+                _viewModel.GenerateVectors(algorithmInfo, _vectorFieldBefore, _vectorFieldAfter);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private ViewModel _viewModel;
     }
 }
